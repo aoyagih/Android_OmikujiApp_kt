@@ -5,12 +5,14 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.animation.AnimationUtils
-import android.widget.ImageView
-import java.util.*
+import kotlinx.android.synthetic.main.activity_result.*
+import kotlin.random.Random
 
 class ResultActivity : AppCompatActivity() {
 
-    internal var images = intArrayOf(
+    var r = Random.nextInt(7)
+
+    val images = intArrayOf(
         R.drawable.daikitixxxhdpi,
         R.drawable.tyukitixxxhdpi,
         R.drawable.kitixxxhdpi,
@@ -20,14 +22,11 @@ class ResultActivity : AppCompatActivity() {
         R.drawable.daikyouxxxhdpi
     )
 
-    internal var r = Random()
-    internal var n = r.nextInt(7)
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_result)
-        findViewById<ImageView>(R.id.imageView).setImageResource(images[n])
-        findViewById<ImageView>(R.id.imageView).startAnimation(AnimationUtils.loadAnimation(this, R.anim.fall))
+        iv.setImageResource(images[r])
+        iv.startAnimation(AnimationUtils.loadAnimation(this, R.anim.fall))
     }
 
     fun b1(v : View) {

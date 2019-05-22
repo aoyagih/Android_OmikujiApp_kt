@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:src="@drawable/omikuji"
-            android:id="@+id/omikuji"
+            android:id="@+id/ib"
             android:onClick="b0"
     />
     <TextView

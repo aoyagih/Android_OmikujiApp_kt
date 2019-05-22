@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.animation.AnimationUtils
-import android.widget.ImageButton
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun b0(v: View) {
-        findViewById<ImageButton>(R.id.omikuji).startAnimation(AnimationUtils.loadAnimation(this, R.anim.shake_omikuji))
+        ib.startAnimation(AnimationUtils.loadAnimation(this, R.anim.shake_omikuji))
         val intent = Intent(this, ResultActivity::class.java)
         startActivity(intent)
     }
